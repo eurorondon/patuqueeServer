@@ -46,7 +46,7 @@ const productRoute = express.Router();
 // GET ALL PRODUCT FORMA LAMA
 
 productRoute.get("/", async (req, res) => {
-  const pageSize = 10;
+  const pageSize = 20;
   const page = Number(req.query.pageNumber) || 0;
   const keyword = req.query.keyword
     ? {
