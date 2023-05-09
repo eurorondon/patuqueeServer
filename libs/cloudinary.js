@@ -8,7 +8,7 @@ cloudinary.config({
 
 export const uploadImage = async (filepath) => {
   return await cloudinary.uploader.upload(filepath, {
-    folder: "Patuquee",
+    folder: "Patuquee/Productos",
   });
 };
 
