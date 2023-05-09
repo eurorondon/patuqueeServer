@@ -14,7 +14,7 @@ export const uploadImage = async (filepath) => {
 
 export const uploadImageComprobante = async (filepath) => {
   return await cloudinary.uploader.upload(filepath, {
-    folder: "ComprobantesDePago",
+    folder: "Patuquee/ComprobantesDePago",
   });
 };
 
