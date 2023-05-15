@@ -367,31 +367,4 @@ productRoute.post(
   })
 );
 
-// CATEGORY PRODUCT
-productRoute.post(
-  "/categoria",
-  asyncHandler(async (req, res) => {
-    const { categoria, description } = req.body;
-
-    const categoriaExist = await Category.findOne({ categoria });
-    if (categoriaExist) {
-      res.status(400);
-      throw new Error("Categoria name already exists");
-    } else {
-      const category = new Category({
-        categoria,
-        description,
-      });
-
-      if (category) {
-        const createdCategoria = await category.save();
-        res.status(201).json(createdCategoria);
-      } else {
-        res.status(400);
-        throw new Error("Invalid product data");
-      }
-    }
-  })
-);
-
 export default productRoute;
